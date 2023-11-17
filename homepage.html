@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog's Purpose</title>
+    <style>
+        /* For right now these are the default styles i will link a CSS file next week*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* makes the logo stay to the left and center the items in the header*/
+        header {
+            background-color:darkcyan;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h1 {
+            margin: 0; /* Remove default margin for h1 */
+            text-align: center;
+            flex-grow: 1; /* Allow the Title to grow and take available space */
+        }
+
+        nav {
+            background-color:darkslategrey;
+            color: #fff;
+            padding: 10px;
+            width: 20%;
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #fff;
+        }
+
+        section {
+            float: left;
+            padding: 20px;
+            width: 60%;
+        }
+
+        footer {
+            clear: both;
+            background-color:darkcyan;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="Images/logo-transparent-png.png" alt="Dog's Purpose Logo" style="max-width: 100px; max-height: 100px;">
+        </div>
+        <h1>Dog's Purpose</h1>
+    </header>
+
+    <nav>
+        <a href="#">Community Posts</a>
+        <a href="#">Important Info about Dogs</a>
+        <a href="#">Dog Products</a>
+        <a href="#">About Me</a>
+    </nav>
+
+    <section>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="Images/Minnie 1.jpg" alt="Minnie Dog">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis egestas. Tincidunt id aliquet risus feugiat..</p>
+            </div>
+
+            <div class="mySlides">
+                <img src="Images/maltipoo puppy.jpg" alt="Maltipoo Puppy">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis egestas. Tincidunt id aliquet risus feugiat..</p>
+            </div>
+
+            <!-- I will add more slides -->
+
+            <!-- Navigation buttons for the slideshow -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <aside>
+        <!-- Aside Content Goes Here -->
+        <h2>Important Facts</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis egestas. Tincidunt id aliquet risus feugiat..
+        </p>
+    </aside>
+
+    <footer>
+        &copy; 2023 Dog's Purpose
+    </footer>
+
+    <script>
+        // JavaScript for slideshow functionality
+        var slideIndex = 1;
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Show first slide on page load
+        showSlides(slideIndex);
+    </script>
+
+</body>
+</html>
