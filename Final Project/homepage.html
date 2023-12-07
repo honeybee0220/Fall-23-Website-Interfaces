@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog's Purpose</title>
+    <link rel="stylesheet" href="finalproject.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="Images/logo-transparent-png.png" alt="Dog's Purpose Logo" style="max-width: 100px; max-height: 100px;">
+        </div>
+        <h1>Dog's Purpose</h1>
+    </header>
+
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="communityposts.html">Community Posts</a>
+        <a href="important_info_about_dogs.html">Important Info about Dogs</a>
+        <a href="Dog products.html">Dog Products</a>
+        <a href="about me.html">About Me</a>
+    </nav>
+
+    <section>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="Images/Minnie 1.jpg" alt="Minnie Dog">
+                <p>
+                    This is Minnie. This is my dog. She is so cute and fluffy! She is the forever featured dog of the week.
+                </p>
+            </div>
+
+            <div class="mySlides">
+                <img src="Images/maltipoo puppy.jpg" alt="Maltipoo Puppy">
+                <p>
+                    This is my friends dog named Mr.Cuddles. He is very small and fluffy! He is the featured dog of this week!
+                </p>
+            </div>
+
+            <!-- I will add more slides -->
+
+            <!-- Navigation buttons for the slideshow -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <aside>
+        <!-- Aside Content Goes Here -->
+        <h2>Fun Facts</h2>
+        <p>
+            <ol>
+                <li>Dogs are the most popular pet on the planet!</li>
+                <li>Dogs use body language to express their feelings.</li>
+                <li>They can be right or left-pawed!</li>
+              </ol>
+        </p>
+    </aside>
+
+    <footer>
+        &copy; 2023 Dog's Purpose
+    </footer>
+
+    <script>
+        // JavaScript for slideshow functionality
+        var slideIndex = 1;
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Show first slide on page load
+        showSlides(slideIndex);
+    </script>
+
+</body>
+</html>
